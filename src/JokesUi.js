@@ -3,9 +3,8 @@ import { getComponentSharedStyles } from '@bbva-web-components/bbva-core-lit-hel
 import styles from './JokesUi-styles.js';
 import '@bbva-web-components/bbva-web-form-text/bbva-web-form-text'
 import {BbvaCoreIntlMixin} from '@bbva-web-components/bbva-core-intl-mixin'
-import '@bbva-web-components/bbva-button-default/bbva-button-default'
-import '@bbva-web-components/bbva-foundations-icons/bbva-foundations-icons'
-import {bbvaReturnmoney} from '@bbva-web-components/bbva-foundations-icons/bbva-foundations-icons.js';
+
+
 /**
 ![LitElement component](https://img.shields.io/badge/litElement-component-blue.svg)
 
@@ -58,10 +57,6 @@ export class JokesUi extends BbvaCoreIntlMixin(LitElement) {
           ? html`<h1>${this.t('joker-ui-container-title')}</h1>`
           : html``
         }
-      <div class="container">
-      <bbva-button-default variant="icon" icon="${bbvaReturnmoney()}"></bbva-button-default>
-      </div>
-
       ${this.jokes.map((joke) => {
           return html`
             <p class="joke-text">${joke}</p>
