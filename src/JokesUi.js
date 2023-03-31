@@ -59,9 +59,9 @@ export class JokesUi extends BbvaCoreIntlMixin(LitElement) {
           : html``
         }
       <div class="container">
-      <bbva-button-default @click=${this.decrementa} ?disabled="${this.value === 0}" variant="icon" icon="${bbvaReturnmoney()}"></bbva-button-default>
+      <bbva-button-default variant="icon" icon="${bbvaReturnmoney()}"></bbva-button-default>
       </div>
-      
+
       ${this.jokes.map((joke) => {
           return html`
             <p class="joke-text">${joke}</p>
