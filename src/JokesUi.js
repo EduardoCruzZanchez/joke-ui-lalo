@@ -27,13 +27,17 @@ export class JokesUi extends BbvaCoreIntlMixin(LitElement) {
   static get properties() {
     return {
       jokes: { type: Array },
+      //add flag to demo case
+      "hide-title": {type: Boolean},
     };
   }
 
   // Initialize properties
   constructor() {
     super();
-    this.jokes = ['broma1', 'broma2'];
+    this.jokes = [];
+    //add new demo case hide title
+    this["hide-title"] = false;
   }
 
   static get styles() {
@@ -47,8 +51,10 @@ export class JokesUi extends BbvaCoreIntlMixin(LitElement) {
   render() {
     return html`
       <div class="container">
-          <h1>${this.t("joker-ui-container-title")}</h1>
-
+      ${!this["hide-title"]
+          ? html`<h1>${this.t('joker-ui-container-title')}</h1>`
+          : html``
+        }
       ${this.jokes.map((joke) => {
           return html`
             <p class="joke-text">${joke}</p>
